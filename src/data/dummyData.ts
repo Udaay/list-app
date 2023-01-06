@@ -1,4 +1,6 @@
-export const dummyData = [
+import { ListItem } from "../model/listModel";
+
+const dummyData : ListItem[] = [
   {
     id: "0",
     name: "Sports",
@@ -86,3 +88,5 @@ export const dummyData = [
 
 
 ];
+
+export default dummyData;
