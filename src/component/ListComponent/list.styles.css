@@ -1,0 +1,57 @@
+details > summary, details[open] > summary {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.expandButton{
+  position: relative;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #3498db;
+  border-radius: 50%;
+}
+
+.expandButton.hide-button .vertical-line, .expandButton.hide-button .horizontal-line{
+  background: transparent;
+}
+.expandButton.hide-button{
+  visibility: hidden;
+}
+
+.vertical-line {
+  position: absolute;
+  height: 12px;
+  width: 2px;
+  transition: all 0.2s ease-in;
+  background-color: aliceblue;
+}
+
+.horizontal-line {
+  position: relative;
+  height: 2px;
+  width: 12px;
+  background-color: aliceblue;
+}
+
+details[open] > summary .horizontal-line {
+  width: 0;
+}
+
+details[open] > summary .vertical-line {
+  rotate: 90deg;
+  
+}
+.child-details{
+  margin-left: 2.8rem;
+}
+.checkbox {
+  height: 18px;
+  width: 18px;
+  margin: 0 1rem;
+}

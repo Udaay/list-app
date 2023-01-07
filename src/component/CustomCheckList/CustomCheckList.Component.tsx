@@ -1,11 +1,23 @@
+import { CustomCheckListProps } from "../../model/listModel";
+import ListComponent from "../ListComponent/List.Component";
 import "./CustomCheckList.styles.css";
 
+function CustomCheckList(props: CustomCheckListProps) {
+  const { checkListData, onSubmit } = props;
 
-function CustomCheckList() {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    onSubmit(checkListData);
+  };
 
   return (
-    <div>CustomCheckList</div>
-  )
+    <form onSubmit={handleSubmit}>
+      <div className="form-container" >
+          <ListComponent listData = {checkListData} />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  );
 }
 
-export default CustomCheckList
+export default CustomCheckList;

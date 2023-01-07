@@ -4,6 +4,11 @@ export interface ListItem {
   parentId: string | null;
 }
 
- export interface NestedList extends ListItem {
-   childrens: NestedList[];
- }
+export interface NestedList extends ListItem {
+  childrens: NestedList[];
+}
+
+export interface CustomCheckListProps {
+  checkListData: NestedList[];
+  onSubmit: (submittedData:NestedList[]) => void;
+}

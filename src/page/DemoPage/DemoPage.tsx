@@ -34,8 +34,15 @@ function DemoPage() {
     });
   };
 
+  const handleSubmit = (submittedData : NestedList[]) => {
+    console.log(submittedData, "submittedData");
+  }
+
   return (
-    <CustomCheckList />
+    <CustomCheckList 
+      checkListData = {data}
+      onSubmit = {handleSubmit}
+    />
   );
 }
 
