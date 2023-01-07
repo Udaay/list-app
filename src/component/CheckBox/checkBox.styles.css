@@ -1,0 +1,41 @@
+/* Hiding the default checkmark */
+.checkbox-container input{
+  display: none;
+}
+
+.checkbox-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
+/* Custom Checkbox style as per design */
+.checkmark{
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid aliceblue;
+  margin: 0 1.5rem;
+}
+
+.checkmark::after {
+  content: "";
+  /* Create the checkmark/indicator (hidden when not checked) */
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  background-color: #41C3B6;
+  border-radius: 50%;
+  transition: 0.15s;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked + .checkmark::after {
+  display: block;
+}
