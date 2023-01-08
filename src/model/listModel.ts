@@ -7,12 +7,12 @@ export interface ListItem {
 export interface NestedList extends ListItem {
   childrens: NestedList[];
   checked: boolean;
-  isChildChecked: boolean;
 }
 
 export interface CustomCheckListProps {
   checkListData: NestedList[];
-  onSubmit: (submittedData: NestedList[]) => void;
+  onSubmit: () => void;
+  onCheck : (updatedData: NestedList[]) => void;
 }
 
 export interface ListComponentProps {
@@ -24,4 +24,5 @@ export interface CheckBoxProps {
   name: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  checked: boolean;
 }

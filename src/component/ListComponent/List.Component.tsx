@@ -5,8 +5,8 @@ import CheckBox from "../CheckBox/CheckBox.Component";
 function ListComponent(props: ListComponentProps) {
   const { listData, handleCheckBoxClicked } = props;
 
-  const onCheckBoxClicked = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value: targetId, checked } = e.target;
+  const onCheckBoxClicked = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value: targetId, checked } = event.target;
     const target = listData.find(({ id }) => id === targetId) as NestedList;
     handleCheckBoxClicked(target, checked);
   };
@@ -33,6 +33,7 @@ function ListComponent(props: ListComponentProps) {
               onChange={onCheckBoxClicked}
               name={itemData.name}
               value={itemData.id}
+              checked = {itemData.checked}
             />
           </summary>
           {itemData.childrens.length > 0 ? (
