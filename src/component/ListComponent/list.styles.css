@@ -16,12 +16,12 @@ details[open] > summary {
 /* Handled Plus and Minus on Expand */
 .expandButton {
   position: relative;
-  height: 18px;
-  width: 18px;
+  height: 1.8rem;
+  width: 1.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.1rem solid #3498db;
+  border: 0.2rem solid #CBD1D4;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -32,15 +32,16 @@ details[open] > summary {
   background: transparent;
 }
 .expandButton.hide-button {
-  border: none;
+  border-style: none;
   cursor: default;
+  width: 2.2rem;
 }
 
 .hide-button::after {
   position: absolute;
   content: "";
   width: 0.1rem;
-  border-left: 0.1rem dashed aliceblue;
+  border-left: 0.2rem dashed #CBD1D4;
   height: 2rem;
   left: 0.9rem;
 }
@@ -48,8 +49,8 @@ details[open] > summary {
   position: absolute;
   content: "";
   height: 0.1rem;
-  border-top: 0.1rem dashed aliceblue;
-  width: 2rem;
+  border-top: 0.2rem dashed #CBD1D4;
+  width: 2.4rem;
   left: 1.2rem;
 }
 
@@ -58,14 +59,14 @@ details[open] > summary {
   height: 12px;
   width: 2px;
   transition: all 0.2s ease-in;
-  background-color: aliceblue;
+  background-color: #74838F;
 }
 
 .horizontal-line {
   position: relative;
   height: 2px;
   width: 12px;
-  background-color: aliceblue;
+  background-color: #74838F;
 }
 
 /* If any node is expanded will make horizontal line width 0 and rotate vertical line */
@@ -82,7 +83,7 @@ summary::after {
   position: absolute;
   width: 0.1rem;
   height: 2.5rem;
-  border-left: 0.1rem dashed aliceblue;
+  border-left: 0.2rem dashed #CBD1D4;
   top: 2.7rem;
   left: 0.9rem;
 }
@@ -95,16 +96,16 @@ details[open] > summary::after {
   position: relative;
   padding-left: 2.6rem;
   margin-left: 0.9rem;
-  border-left: 0.1rem dashed aliceblue;
+  border-left: 0.2rem dashed #CBD1D4;
 }
 
 .child-details::after {
   position: absolute;
   content: "";
   width: 0.1rem;
-  border-left: 0.1rem dashed aliceblue;
+  border-left: 0.2rem dashed #CBD1D4;
   height: 2rem;
-  left: -0.1rem;
+  left: -0.2rem;
   bottom: -2.3rem;
 }
 
