@@ -1,14 +1,15 @@
+import { CheckBoxProps } from "../../model/listModel";
 import "./checkBox.styles.css";
 
-function CheckBox(props: any) {
-  const {name} = props;
+function CheckBox(props: CheckBoxProps) {
+  const { name, ...restProps } = props;
   return (
     <label className="checkbox-container">
-      <input type="checkbox" className="checkbox" />
-      <span className="checkmark"/>
-      <span className="label-name" >{name}</span>
+      <input {...restProps} type="checkbox" className="checkbox" />
+      <span className="checkmark" />
+      <span className="label-name">{name}</span>
     </label>
-  )
+  );
 }
 
-export default CheckBox
+export default CheckBox;

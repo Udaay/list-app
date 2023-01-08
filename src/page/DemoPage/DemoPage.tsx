@@ -12,7 +12,12 @@ function DemoPage() {
       .then((data) => {
         const rootNodes = data
           .filter(({ parentId }) => parentId === null) // Getting Root Node first.
-          .map((root) => ({ ...root, childrens: [] })) // Adding EmptyChild to Every RootNode.
+          .map((root) => ({
+            ...root,
+            childrens: [],
+            checked: false,
+            isChildChecked: false,
+          })); // Adding EmptyChild to Every RootNode.
         rootNodes.forEach((root) => convertData(root, data));
         console.log(rootNodes);
         setData(rootNodes);
@@ -22,7 +27,12 @@ function DemoPage() {
   const convertData = (root: NestedList, data: ListItem[]) => {
     data.forEach((item) => {
       if (item.parentId == root.id) {
-        const child = { ...item, childrens: [] };
+        const child = {
+          ...item,
+          childrens: [],
+          checked: false,
+          isChildChecked: false,
+        };
 
         //Getting Index at which current data will reside in childrens Array.
         const path = item.id.split("-");
@@ -34,16 +44,11 @@ function DemoPage() {
     });
   };
 
-  const handleSubmit = (submittedData : NestedList[]) => {
-    console.log(submittedData, "submittedData");
-  }
+  const handleSubmit = (submittedData: NestedList[]) => {
+    console.info("Output =>" , submittedData);
+  };
 
-  return (
-    <CustomCheckList 
-      checkListData = {data}
-      onSubmit = {handleSubmit}
-    />
-  );
+  return <CustomCheckList checkListData={data} onSubmit={handleSubmit} />;
 }
 
 export default DemoPage;
