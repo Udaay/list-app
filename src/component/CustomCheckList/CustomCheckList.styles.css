@@ -1,3 +1,11 @@
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 1px 1px white;
+  padding: 1rem;
+  min-width: 400px;
+}
+
 button[type="submit"]{
   padding: 0.5rem;
   font-size: 1.8rem;

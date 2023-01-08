@@ -1,9 +1,10 @@
 /* Hiding the default checkmark */
-.checkbox-container input{
+.checkbox-container input {
   display: none;
 }
 
-.checkbox-container{
+.checkbox-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,14 +12,15 @@
 }
 
 /* Custom Checkbox style as per design */
-.checkmark{
+.checkmark {
   position: relative;
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 4px;
-  border: 1px solid aliceblue;
+  border: 0.1rem solid aliceblue;
   margin: 0 1.5rem;
+  cursor: pointer;
 }
 
 .checkmark::after {
@@ -30,7 +32,7 @@
   position: absolute;
   left: 4px;
   top: 3px;
-  background-color: #41C3B6;
+  background-color: #41c3b6;
   border-radius: 50%;
   transition: 0.15s;
 }
@@ -38,4 +40,36 @@
 /* Show the checkmark when checked */
 .checkbox-container input:checked + .checkmark::after {
   display: block;
+}
+
+.checkbox-container::after {
+  content: "";
+  position: absolute;
+  width: 0.1rem;
+  border-left: 0.1rem dashed aliceblue;
+  height: 100%;
+  top: 2.4rem;
+  left: 2.5rem;
+}
+
+.label-name{
+  user-select: none;
+  cursor: pointer;
+}
+
+.child-details > details:last-of-type > summary > .hide-button::after {
+  height: 50%;
+  top: 0;
+}
+
+/* If details is not open will not show dashed line below parent node */
+details:not([open]) > summary > .checkbox-container::after {
+  content: none;
+}
+
+/* disable vertical dashed line for the leaf-node  */
+.leaf-node .checkbox-container::after,
+.leaf-node:last-of-type > summary::after
+ {
+  content: none;
 }

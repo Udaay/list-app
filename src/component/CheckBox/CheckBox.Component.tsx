@@ -6,7 +6,7 @@ function CheckBox(props: any) {
     <label className="checkbox-container">
       <input type="checkbox" className="checkbox" />
       <span className="checkmark"/>
-      <span>{name}</span>
+      <span className="label-name" >{name}</span>
     </label>
   )
 }

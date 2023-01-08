@@ -7,7 +7,10 @@ function ListComponent(props: any) {
   return (
     <>
       {listData.map((itemData: NestedList) => (
-        <details key={itemData.id}>
+        <details
+          key={itemData.id}
+          className={`${itemData.childrens.length === 0 ? "leaf-node" : "has-child"}`}
+        >
           <summary>
             <div
               className={`expandButton ${
@@ -19,11 +22,11 @@ function ListComponent(props: any) {
             </div>
             <CheckBox name={itemData.name} />
           </summary>
-          <div className="child-details">
             {itemData.childrens.length > 0 ? (
-              <ListComponent listData={itemData.childrens} />
+              <div className="child-details">
+                <ListComponent listData={itemData.childrens} />
+              </div>
             ) : null}
-          </div>
         </details>
       ))}
     </>
